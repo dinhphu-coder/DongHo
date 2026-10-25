@@ -1,0 +1,12 @@
+{
+  "name": "kairo-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.10"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test"
+  }
+}

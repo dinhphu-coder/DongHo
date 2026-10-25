@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Khám phá đồng hồ thông minh theo phong cách sống tại KAIRO. Dữ liệu sản phẩm trên website hiện là dữ liệu minh họa."
+    />
+    <meta name="theme-color" content="#f3f3ef" />
+    <title>KAIRO — Đồng hồ cho nhịp sống của bạn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="products.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      KAIRO PRIVATE SELECTION · Miễn phí giao hàng từ 2.000.000đ
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="KAIRO, về đầu trang"
+        ><span class="brand-mark">K</span><span>KAIRO</span></a
+      >
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="#products">Đồng hồ</a>
+        <a href="#categories">Khám phá</a>
+        <a href="#about">Về KAIRO</a>
+      </nav>
+      <label class="search-box">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="10.8" cy="10.8" r="6.8"></circle>
+          <path d="m16 16 4.5 4.5"></path>
+        </svg>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Tìm sản phẩm..."
+          aria-label="Tìm theo tên hoặc thương hiệu"
+        />
+        <kbd>/</kbd>
+      </label>
+      <div class="header-actions">
+        <a class="account-link" href="#about">Hỗ trợ</a>
+        <button
+          class="cart-trigger"
+          id="openCart"
+          type="button"
+          aria-label="Mở giỏ hàng"
+        >
+          Giỏ hàng <span id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> BỘ SƯU TẬP ĐƯỢC TUYỂN CHỌN</p>
+          <h1 id="hero-title">
+            Lịch lãm<br />trong từng<br /><em>chuyển động.</em>
+          </h1>
+          <p class="hero-description">
+            Thiết kế tinh gọn, công nghệ hữu ích. Lựa chọn đồng hành từ phòng
+            họp đến những ngày chuyển động.
+          </p>
+          <a class="button button-dark" href="#products"
+            >Khám phá tuyển chọn <span aria-hidden="true">↘</span></a
+          >
+          <div class="hero-note">
+            <span class="note-line"></span
+            ><span
+              >Dữ liệu sản phẩm và giá trong bản demo chỉ mang tính minh
+              họa.</span
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85"
+              alt="Đồng hồ thông minh trên cổ tay, ảnh minh họa"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero-stamp">
+            <span>TIME</span><span>WITH</span><strong>INTENT.</strong>
+          </div>
+          <div class="hero-caption">
+            <span>01 / 04</span><span>TUYỂN CHỌN CHO PHONG THÁI HIỆN ĐẠI</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="category-strip"
+        id="categories"
+        aria-label="Danh mục theo nhu cầu"
+      >
+        <p>TÌM CHIẾC ĐỒNG HỒ CỦA BẠN</p>
+        <div class="category-links">
+          <button
+            class="category-link is-active"
+            type="button"
+            data-category="all"
+          >
+            Tất cả <span>↗</span>
+          </button>
+          <button class="category-link" type="button" data-category="sport">
+            Thể thao <span>↗</span>
+          </button>
+          <button class="category-link" type="button" data-category="wellness">
+            Sức khỏe <span>↗</span>
+          </button>
+          <button class="category-link" type="button" data-category="style">
+            Thời trang <span>↗</span>
+          </button>
+          <button class="category-link" type="button" data-category="premium">
+            Cao cấp <span>↗</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="shop-section" id="products">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">KAIRO / CURATED WATCHES</p>
+            <h2>Bộ sưu tập <span>01</span></h2>
+          </div>
+          <p class="section-subtitle">
+            Thiết kế cho phong thái riêng<br />Công nghệ cho nhịp sống mới
+          </p>
+        </div>
+
+        <div class="shop-layout">
+          <aside class="filters" aria-label="Bộ lọc sản phẩm">
+            <div class="filter-head">
+              <h3>Lọc sản phẩm</h3>
+              <button id="clearFilters" type="button">Xóa lọc</button>
+            </div>
+            <fieldset class="filter-group">
+              <legend>Thương hiệu</legend>
+              <div id="brandFilters" class="check-list"></div>
+            </fieldset>
+            <fieldset class="filter-group price-filter">
+              <legend>Khoảng giá</legend>
+              <label class="price-label" for="priceRange"
+                >Tối đa <strong id="priceOutput">7.000.000đ</strong></label
+              ><input
+                id="priceRange"
+                type="range"
+                min="500000"
+                max="13000000"
+                step="250000"
+                value="13000000"
+              />
+              <div class="range-labels">
+                <span>500.000đ</span><span id="priceMaxLabel">13.000.000đ</span>
+              </div>
+            </fieldset>
+            <fieldset class="filter-group">
+              <legend>Tình trạng</legend>
+              <label class="check-option"
+                ><input id="inStockOnly" type="checkbox" /><span
+                  >Còn hàng</span
+                ></label
+              >
+            </fieldset>
+            <p class="filter-disclaimer">
+              Thông tin và giá bán là dữ liệu mẫu phục vụ trải nghiệm giao diện.
+            </p>
+          </aside>
+
+          <div class="catalog">
+            <div class="catalog-toolbar">
+              <p id="resultCount" aria-live="polite"></p>
+              <label for="sortSelect"
+                >Sắp xếp
+                <select id="sortSelect">
+                  <option value="featured">Nổi bật</option>
+                  <option value="price-asc">Giá thấp đến cao</option>
+                  <option value="price-desc">Giá cao đến thấp</option>
+                  <option value="newest">Mới nhất</option>
+                  <option value="popular">Bán chạy</option>
+                </select></label
+              >
+            </div>
+            <div id="productGrid" class="product-grid"></div>
+            <div id="emptyState" class="empty-state" hidden>
+              <span class="empty-icon">⌕</span>
+              <h3>Chưa tìm thấy lựa chọn phù hợp</h3>
+              <p>Thử đổi từ khóa hoặc bỏ bớt bộ lọc nhé.</p>
+              <button
+                class="button button-outline"
+                id="emptyReset"
+                type="button"
+              >
+                Xóa bộ lọc
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="about">
+        <div class="benefits-intro">
+          <p class="eyebrow">MUA SẮM AN TÂM</p>
+          <h2>Chọn tinh tế.<br /><em>Sống chủ động.</em></h2>
+        </div>
+        <div class="benefit-item">
+          <span>01</span>
+          <h3>Bảo hành rõ ràng</h3>
+          <p>
+            Chính sách bảo hành minh bạch sẽ được xác nhận theo từng sản phẩm
+            khi cửa hàng vận hành chính thức.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <span>02</span>
+          <h3>Hỗ trợ có mặt</h3>
+          <p>
+            Cần tư vấn chọn thiết bị? Đội ngũ KAIRO sẵn sàng đồng hành cùng bạn.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <span>03</span>
+          <h3>Giao hàng tận nơi</h3>
+          <p>
+            Phí vận chuyển trong bản demo được tính minh họa và miễn phí từ
+            2.000.000đ.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"
+        ><span class="brand-mark">K</span><span>KAIRO</span></a
+      >
+      <p>Đồng hồ cho nhịp sống của bạn.</p>
+      <span class="footer-note">© 2026 KAIRO · BẢN DEMO HỌC TẬP</span>
+    </footer>
+
+    <dialog
+      id="detailDialog"
+      class="modal detail-modal"
+      aria-labelledby="detailTitle"
+    >
+      <div id="detailContent"></div>
+      <button
+        class="modal-close"
+        type="button"
+        data-close="detailDialog"
+        aria-label="Đóng"
+      >
+        ×
+      </button>
+    </dialog>
+    <dialog
+      id="cartDialog"
+      class="modal cart-modal"
+      aria-labelledby="cartTitle"
+    >
+      <div class="modal-heading">
+        <div>
+          <p class="eyebrow">DANH SÁCH CỦA BẠN</p>
+          <h2 id="cartTitle">
+            Giỏ hàng <span id="cartHeadingCount">(0)</span>
+          </h2>
+        </div>
+        <button
+          class="modal-close inline-close"
+          type="button"
+          data-close="cartDialog"
+          aria-label="Đóng"
+        >
+          ×
+        </button>
+      </div>
+      <div id="cartContent"></div>
+    </dialog>
+    <dialog
+      id="checkoutDialog"
+      class="modal checkout-modal"
+      aria-labelledby="checkoutTitle"
+    >
+      <button
+        class="modal-close"
+        type="button"
+        data-close="checkoutDialog"
+        aria-label="Đóng"
+      >
+        ×
+      </button>
+      <div class="checkout-inner">
+        <p class="eyebrow">ĐẶT HÀNG DEMO · THANH TOÁN KHI NHẬN HÀNG</p>
+        <h2 id="checkoutTitle">Thông tin giao hàng</h2>
+        <p class="checkout-note">
+          Đây là quy trình minh họa trên trình duyệt. Đơn hàng không được gửi
+          đến cửa hàng và chưa có thanh toán thật.
+        </p>
+        <form id="checkoutForm" class="checkout-form">
+          <label
+            >Họ và tên<input
+              name="name"
+              autocomplete="name"
+              required
+              minlength="2"
+          /></label>
+          <div class="form-row">
+            <label
+              >Số điện thoại<input
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                pattern="[0-9 +().-]{9,16}"
+                required /></label
+            ><label
+              >Email<input
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+            /></label>
+          </div>
+          <label
+            >Địa chỉ nhận hàng<textarea
+              name="address"
+              autocomplete="street-address"
+              rows="3"
+              required
+              minlength="8"
+            ></textarea>
+          </label>
+          <div class="payment-choice">
+            <span>Phương thức thanh toán</span
+            ><strong>COD · Thanh toán khi nhận hàng</strong>
+          </div>
+          <button class="button button-dark checkout-submit" type="submit">
+            Xác nhận đơn COD demo <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+        <div
+          id="orderSuccess"
+          class="order-success"
+          hidden
+          aria-live="polite"
+        ></div>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <button
+      class="chat-launcher"
+      id="openChat"
+      type="button"
+      aria-label="Mở trợ lý mua sắm"
+      aria-controls="chatDialog"
+      aria-expanded="false"
+      title="Trợ lý mua sắm"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 1 1 20 11.5Z"
+        />
+        <path d="M8 11.5h.01M12 11.5h.01M16 11.5h.01" />
+      </svg>
+      <span>Hỏi KAIRO</span>
+    </button>
+    <dialog
+      class="modal chat-dialog"
+      id="chatDialog"
+      aria-labelledby="chatTitle"
+    >
+      <header class="chat-header">
+        <div>
+          <p class="eyebrow">TƯ VẤN MUA SẮM</p>
+          <h2 id="chatTitle">Trợ lý KAIRO</h2>
+          <span class="chat-status" id="chatStatus"
+            >Đang kiểm tra trợ lý...</span
+          >
+          <span class="chat-privacy"
+            >Tin nhắn được gửi đến nhà cung cấp AI; đừng nhập thông tin nhạy
+            cảm.</span
+          >
+        </div>
+        <button
+          class="modal-close chat-close"
+          id="closeChat"
+          type="button"
+          aria-label="Đóng trợ lý"
+          title="Đóng trợ lý"
+        >
+          ×
+        </button>
+      </header>
+      <div class="chat-messages" id="chatMessages" aria-live="polite">
+        <div class="chat-message assistant">
+          <p>
+            Chào bạn! Mình có thể tra giá, tồn kho, gợi ý đồng hồ theo ngân sách
+            và giải đáp thông tin của bản demo.
+          </p>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+          <button type="button" data-chat-prompt="Gợi ý đồng hồ dưới 5 triệu">
+            Gợi ý dưới 5 triệu
+          </button>
+          <button type="button" data-chat-prompt="Phí giao hàng thế nào?">
+            Phí giao hàng
+          </button>
+          <button type="button" data-chat-prompt="Chính sách bảo hành ra sao?">
+            Bảo hành
+          </button>
+        </div>
+      </div>
+      <form class="chat-form" id="chatForm">
+        <input
+          id="chatInput"
+          name="message"
+          type="text"
+          maxlength="300"
+          placeholder="Nhập câu hỏi..."
+          aria-label="Nhập câu hỏi cho trợ lý"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" aria-label="Gửi tin nhắn" title="Gửi tin nhắn">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 12h15M13 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
+    </dialog>
+  </body>
+</html>
