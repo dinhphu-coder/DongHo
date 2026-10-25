@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # KAIRO Smartwatch Storefront
 
 MVP giao diện cửa hàng đồng hồ thông minh. Phiên bản hiện tại dùng HTML, CSS và JavaScript thuần để có thể chạy ngay, dễ đọc khi mới học và chưa cần cài dependencies. Catalog và dữ liệu sản phẩm được tách riêng để sau này chuyển sang React/Vite hoặc API dễ hơn.
@@ -39,3 +40,6 @@ Có thể đặt `OPENAI_MODEL` và `OPENAI_BASE_URL` trong `.env` để dùng m
 4. **Kiểm thử và triển khai:** kiểm thử luồng mua hàng, accessibility, responsive; đưa frontend tĩnh lên Cloudflare Pages sau khi cấu hình build phù hợp.
 
 Đăng nhập, theo dõi đơn và thanh toán trực tuyến chưa nằm trong MVP này. Chatbot chỉ biết catalog mẫu; cần xác minh thông số, hình ảnh, giá và quyền sử dụng trước khi dùng cho cửa hàng thật.
+=======
+# DongHo
+>>>>>>> 9c077960f21d0fdfca6e60da10f443349062f91d
